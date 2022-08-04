@@ -23,19 +23,21 @@ public static void main(String[] args) {
 
 	    int part_time_salary = 0;
 	    
-	    if (check==present) {
-	        System.out.println("Employee is present.");
-	        full_time_salary = wage_per_hr * full_day_hr;
-	    }
-	    else if (check==part_time_present) {
-	 	   System.out.println("Employee is present for part time.");
-	 	   part_time_salary = wage_per_hr * part_time_hr;
-	    }
-	    else {
-	        System.out.println("Employee is absent.");
-	    }
+	    switch (check) {
+	   	case 1:
+	   		System.out.println("Employee is present.");
+		    full_time_salary = wage_per_hr * full_day_hr;
+		    break;
+	   	case 3:
+	   		System.out.println("Employee is present for part time.");
+			 part_time_salary = wage_per_hr * part_time_hr;
+			 break;
+	   	default:
+	   		System.out.println("Employee is absent.");
+	   	}
 	    	System.out.println("Daily employee wage: " + full_time_salary);
 	    	System.out.println("Part time employee wage: " + part_time_salary);
+	    	
 }
 }
 
