@@ -1,43 +1,54 @@
 package empwage;
-import java.util.Random;
 public class EmpwageComputation {
 public static void main(String[] args) {
 	System.out.println("Welcome employee wage computation");
-	 Random rand = new Random();
 
-	    int present = 1;
-	    
-	    int absent = 2;
-	    
-	    int part_time_present = 3;
-	    
-	    int check=rand.nextInt(3)+1;
-	    
-	    int wage_per_hr = 20;
-	    
-	    int part_time_hr = 4;
-	    
-	    int full_day_hr = 8;
+    int present = 1;
+    
+    int absent = 3;
+    
+    int part_time_present = 2;
+    
+    int wage_per_hr = 20;
+    
+    int part_time_hr = 4;
+    
+    int full_day_hr = 8;
 
-	    int full_time_salary =0;
-
-	    int part_time_salary = 0;
-	    
-	    switch (check) {
-	   	case 1:
-	   		System.out.println("Employee is present.");
-		    full_time_salary = wage_per_hr * full_day_hr;
-		    break;
-	   	case 3:
-	   		System.out.println("Employee is present for part time.");
-			 part_time_salary = wage_per_hr * part_time_hr;
-			 break;
-	   	default:
-	   		System.out.println("Employee is absent.");
-	   	}
-	    	System.out.println("Daily employee wage: " + full_time_salary);
-	    	System.out.println("Part time employee wage: " + part_time_salary);
-	    	
+    int empwage=0;
+    
+    int max_working_days = 20;
+    
+	int working_hrs =0;
+	int working_days=0;
+	int max_working_hrs = 100;
+	int totalwage=0;
+	
+    while(working_hrs < max_working_hrs && working_days < max_working_days)
+    {
+   double check= Math.floor(Math.random() *10) % 3;
+  
+    int daycount=0;
+    switch ((int)check)
+    {
+   	case 1:
+   		System.out.println("Employee is present.");
+	    empwage = wage_per_hr * full_day_hr;
+	    working_hrs += full_day_hr;
+	    break;
+   	case 2:
+   		System.out.println("Employee is present for part time.");
+		empwage = wage_per_hr * part_time_hr;
+		 working_hrs += part_time_hr;
+		 break;
+   	default:
+   		System.out.println("Employee is absent.");
+   	}
+    totalwage += empwage;
+    System.out.println("employee for day-" + daycount + "=> " + empwage);
+    daycount++;
+}
+    	System.out.println("total wage = " + totalwage);
+	   	System.out.println("total working hours = " + working_hrs);
 }
 }
-
