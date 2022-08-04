@@ -26,3 +26,4 @@ public static void main(String[] args) {
 	    	System.out.println("Daily employee wage: " + full_time_salary);
 }
 }
+
